@@ -1,0 +1,12 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "capability-bounded-agents"
+version = "0.1.0"
+description = "Provable, injection-resistant action limits for autonomous LLM agents"
+requires-python = ">=3.9"
+
+[tool.setuptools]
+packages = ["cba"]
