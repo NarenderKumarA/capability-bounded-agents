@@ -6,3 +6,8 @@ venv/
 *.egg-info/
 build/
 dist/
+*.aux
+*.log
+*.out
+*.fls
+*.fdb_latexmk

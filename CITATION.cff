@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite it as below."
+title: "Capability-Bounded Agents: Provable, Injection-Resistant Action Limits for Autonomous LLM Agents"
+authors:
+  - family-names: "Ale"
+    given-names: "Narendar Kumar"
+    email: "nale02820@ucumberlands.edu"
+    affiliation: "University of the Cumberlands"
+abstract: >
+  A reference monitor and capability contract construction giving provable,
+  injection-resistant containment (0% bypass) for bounded actions taken by
+  autonomous LLM agents, regardless of model output. Includes a mechanism
+  benchmark and a paper draft; the companion real-model adversarial
+  evaluation is at https://github.com/NarenderKumarA/capability-bounded-agents-eval.
+repository-code: "https://github.com/NarenderKumarA/capability-bounded-agents"
+license: MIT
+date-released: 2026-07-20
+keywords:
+  - prompt injection
+  - AI agent safety
+  - reference monitor
+  - capability-based security
+  - LLM security

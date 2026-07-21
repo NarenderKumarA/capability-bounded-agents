@@ -104,9 +104,11 @@ ourselves is not a precondition for the thesis — it only takes one, anywhere, 
 3. ⬜ Expand the attack suite (stronger/obfuscated/multi-turn injections, tool chaining, a
    weaker or less-aligned model e.g. local Ollama, to find a real prompt-mode flip and show
    the monitor still holds it at 0%).
-4. ⬜ Formal soundness write-up + threat model.
-5. ⬜ arXiv preprint + this repo as the artifact + a demo (injected agent tries `rm -rf`,
-   monitor stops it cold).
+4. ✅ Formal soundness write-up + threat model — [`paper/paper.pdf`](paper/paper.pdf)
+   (source: [`paper/paper.tex`](paper/paper.tex)). Compiles cleanly with
+   [Tectonic](https://tectonic-typesetting.github.io/).
+5. ⬜ arXiv preprint (paper draft above is the basis) + a demo (injected agent tries
+   `rm -rf`, monitor stops it cold).
 
 Target venues: NeurIPS/ICLR safety & agents tracks; USENIX Security / IEEE S&P for the
 security framing; agent-safety workshops for fast signal.
@@ -124,3 +126,10 @@ python3 -m cba.harness
 ```bash
 pip install "capability-bounded-agents @ git+https://github.com/NarenderKumarA/capability-bounded-agents.git"
 ```
+
+## Author
+Narendar Kumar Ale — PhD Student, Artificial Intelligence, University of the Cumberlands, KY, USA.
+See [`CITATION.cff`](CITATION.cff) to cite this work.
+
+## License
+[MIT](LICENSE)
