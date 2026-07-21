@@ -43,6 +43,36 @@ both claude-haiku-4-5 and claude-sonnet-4-5 resisted 100% of realistic injection
 prompt-mode bypass across 24 real trials) — see that repo for the full table, raw transcripts,
 and honest interpretation.
 
+## On the two claims and what kind of evidence each needs
+This thesis actually bundles two different claims, and they need two different kinds of
+proof:
+1. **"The reference monitor gives provable containment."** Proven by construction — it's a
+   small, deterministic, default-deny function (`cba/monitor.py`), so every branch it can take
+   is exhaustively reasonable, the way you'd prove a rate limiter. Testing doesn't add to this
+   proof; it already holds.
+2. **"Prompt guardrails are unsound — bypass rate is never zero."** This is a claim about LLM
+   behavior, which is not a formally specified system — there is no way to enumerate every
+   possible injection, so this claim can never be *proven* by testing, only *falsified*: one
+   real bypass disproves "guardrails are always safe." Absence of a bypass in any one eval
+   (including [ours](https://github.com/NarenderKumarA/capability-bounded-agents-eval), which
+   found 0% at current injection strength) proves nothing either way — it only means that
+   particular test didn't find one. That asymmetry is exactly what the impossibility result
+   below formalizes.
+
+Real-world bypasses documented elsewhere are cited as evidence for claim 2, since finding one
+ourselves is not a precondition for the thesis — it only takes one, anywhere, ever, to hold:
+- **Zou et al. and follow-on jailbreak literature** have repeatedly demonstrated adversarial
+  suffixes/prompts that flip aligned models across providers — existence proof that in-model
+  refusal is not watertight.
+- **"Indirect Prompt Injection in the Wild: An Empirical Study of Prevalence, Techniques, and
+  Objectives"** (arXiv, 2026) documents real, deployed indirect-injection bypasses at scale,
+  not lab demonstrations.
+- **Microsoft Semantic Kernel CVE-2026-25592 / CVE-2026-26030** (May 2026): prompt injection
+  escalating to host-level RCE in a shipped agent framework — a guardrail failure with real
+  consequences, not a hypothetical.
+- **OWASP LLM Top 10** still ranks prompt injection #1, based on aggregated industry incident
+  data, not a single lab result.
+
 ## Why now (related work, as of Jul 2026)
 - **Abdelnabi & Bagdasarian, "AI Agents May Always Fall for Prompt Injections" (arXiv, May 2026)**
   prove a formal impossibility result: in-model defenses cannot eliminate prompt injection
