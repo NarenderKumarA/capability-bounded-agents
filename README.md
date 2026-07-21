@@ -36,7 +36,7 @@ still blocks the bounded action → 0% executed, for every model and attack.
 ## Real-model empirical eval → separate repo
 The mocked table above uses an asserted flip threshold, not a measured one. The real-model
 adversarial eval that measures actual bypass rates against live Bedrock Claude models lives
-in a companion repo: **[capability-bounded-agents-eval](https://github.com/REPLACE_OWNER/capability-bounded-agents-eval)**
+in a companion repo: **[capability-bounded-agents-eval](https://github.com/NarenderKumarA/capability-bounded-agents-eval)**
 — it depends on this repo's `cba` package (installed via pip/git) and reuses `ATTACKS`,
 `World`, `make_tools`, `CapabilityContract`, and `ReferenceMonitor` unchanged. First result:
 both claude-haiku-4-5 and claude-sonnet-4-5 resisted 100% of realistic injections (0%
@@ -67,7 +67,7 @@ and honest interpretation.
 ## Roadmap
 1. ✅ Reference-monitor + capability contract + containment benchmark (this repo).
 2. ✅ Real-model adversarial eval — see
-   [capability-bounded-agents-eval](https://github.com/REPLACE_OWNER/capability-bounded-agents-eval):
+   [capability-bounded-agents-eval](https://github.com/NarenderKumarA/capability-bounded-agents-eval):
    0% prompt-mode bypass observed at this injection strength, monitor 0% confirmed
    empirically. Escalating adversary strength to find a real non-zero prompt-mode bypass is
    the immediate follow-up there.
@@ -92,5 +92,5 @@ python3 -m cba.harness
 
 ## Install (as a dependency)
 ```bash
-pip install "capability-bounded-agents @ git+https://github.com/REPLACE_OWNER/capability-bounded-agents.git"
+pip install "capability-bounded-agents @ git+https://github.com/NarenderKumarA/capability-bounded-agents.git"
 ```
